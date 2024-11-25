@@ -8,4 +8,4 @@ class User(db.Model):
     profession = db.Column(db.String(50), nullable=False)
     phone = db.Column(db.String(15), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(200), nullable=False)  # Store the hashed password
+    password = db.Column(db.String(200), nullable=False)  
