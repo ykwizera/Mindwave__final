@@ -4,23 +4,19 @@ from app.models import db, User
 
 app = Flask(__name__)
 
-# Configuration for app
 app.config['SECRET_KEY'] = 'your-secret-key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Initialize DB and LoginManager
 db.init_app(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-# Route for the home page (protected)
 @app.route('/home')
 @login_required
 def home():
     return render_template('app/home.html', name=current_user.first_name)
 
-# Route for signup page
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
@@ -59,7 +55,6 @@ def signup():
 
     return render_template('app/signup.html')
 
-# Route for login page
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -77,7 +72,6 @@ def login():
 
     return render_template('app/login.html')
 
-# Route for logout
 @app.route('/logout')
 @login_required
 def logout():
@@ -85,14 +79,12 @@ def logout():
     flash("Logged out successfully.", "info")
     return redirect(url_for('login'))
 
-# Route to display all registered users (people page)
 @app.route('/people')
 @login_required
 def people():
     users = User.query.all()
     return render_template('app/people.html', users=users)
 
-# Load user by ID (used for login management)
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
