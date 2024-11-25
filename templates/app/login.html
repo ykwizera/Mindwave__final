@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="main-content">
+      <div class="container">
+        <h2>WELCOME BACK!</h2>
+
+        <form id="loginForm" action="" method="POST">
+          <div class="form-group">
+            <label for="username">Email</label>
+            <input type="email" id="username" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+          <button type="submit" class="btn">Log In</button>
+        </form>
+        
+        <div class="options">
+          <a href="reset.html" id="forgotPassword">Forgot Password?</a>
+          <span> | </span>
+          <a href="signup.html" id="signUp">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
