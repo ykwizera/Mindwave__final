@@ -8,7 +8,6 @@ router.get('/', (req, res) => res.render('home'));
 router.get('/login', (req, res) => res.render('login'));
 router.get('/signup', (req, res) => res.render('signup'));
 router.get('/courses', (req, res) => res.render('courses'));
-router.get('/people', (req, res) => res.render('people'));
 router.get('/csc', (req, res) => res.render('csc'));
 router.get('/chem', (req, res) => res.render('chem'));
 router.get('/biology', (req, res) => res.render('biology'));
@@ -22,6 +21,22 @@ router.get('/dashboard', (req, res) => {
         return res.redirect('/login');
     }
     res.render('dashboard', { user: req.session.user });
+});
+
+// People route - Fetch and display all users
+router.get('/people', async (req, res) => {
+    try {
+        // Fetch all registered users from the database
+        const users = await User.find({}, 'firstName lastName schoolName profession phone email');
+        
+        // Render the 'people.ejs' view and pass the users
+        res.render('people', { users });
+    } catch (error) {
+        console.error('Error fetching users:', error.message);
+
+        // Handle errors gracefully
+        res.status(500).send('Error fetching users: ' + error.message);
+    }
 });
 
 // Signup route

@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mathematics Course</title>
+    <title>Registered Users</title>
     <link rel="stylesheet" href="/css/math.css">
     <link rel="stylesheet" href="/css/dashboard.css">
+    <style>
+        /* Add spacing between columns */
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px; /* Adds vertical space between rows */
+        }
+
+        th, td {
+            padding: 10px 15px; /* Adds horizontal and vertical padding */
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Adds alternating row colors for better readability */
+        }
+
+        tr:hover {
+            background-color: #e9ecef; /* Highlight row on hover */
+        }
+    </style>
 </head>
 <body>
 
@@ -15,9 +40,9 @@
             <a href="/dashboard" style="text-decoration: none;"><h1>Mind<span>Wave</span></h1></a>
         </div>
         <div class="header-navigation-actions">
-            <a href="user-profile.html" class="button">User Profile</a>
-            <a href="user-profile.html" class="avatar">
-                <img src="assets/profile.jpg" alt="User Avatar" />
+            <a href="/user-profile" class="button">User Profile</a>
+            <a href="/user-profile" class="avatar">
+                <img src="/assets/profile.jpg" alt="User Avatar" />
             </a>
         </div>
     </header>
@@ -36,33 +61,44 @@
         </div>
 
         <!-- Main Content -->
-        <h1>Registered Users</h1>
-    
-        <table>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>School Name</th>
-                <th>Profession</th>
-                <th>Phone</th>
-                <th>Email</th>
-            </tr>
-            <% users.forEach(user => { %>
-            <tr>
-                <td><%= user.firstName %></td>
-                <td><%= user.lastName %></td>
-                <td><%= user.schoolName %></td>
-                <td><%= user.profession %></td>
-                <td><%= user.phone %></td>
-                <td><%= user.email %></td>
-            </tr>
-            <% }) %>
-        </table>
-
+        <div class="main-content">
+            <h1>Registered Users</h1>
+        
+            <!-- User Table -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>School Name</th>
+                        <th>Profession</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (users.length > 0) { %>
+                        <% users.forEach(user => { %>
+                            <tr>
+                                <td><%= user.firstName %></td>
+                                <td><%= user.lastName %></td>
+                                <td><%= user.schoolName %></td>
+                                <td><%= user.profession %></td>
+                                <td><%= user.phone %></td>
+                                <td><%= user.email %></td>
+                            </tr>
+                        <% }) %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="6">No users found</td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <!-- Footer -->
-
     <footer class="footer">
         <p>&copy; 2024 KeYCo Platform. All rights reserved.</p>
     </footer>
