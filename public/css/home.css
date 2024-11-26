@@ -68,16 +68,27 @@ body {
 }
 
 .hero {
-  margin-top: 80px; /* Adjust for fixed header */
-  background-color: #f7f5f5; /* Updated Light Grey */
+  margin-top: 80px; 
+  background-color: #f7f5f5;
   color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 3rem 1rem;
-  text-align: center;
+  gap: 2rem;
 }
 
 .hero .container {
+  display: flex;
   max-width: 1200px;
   margin: auto;
+  width: 100%;
+}
+
+.hero .text_container {
+  padding-top: 80px;
+  flex: 1;
+  padding-right: 2rem;
 }
 
 .hero h1 {
@@ -101,6 +112,18 @@ body {
 
 .hero a:hover {
   background-color: #357ab9; /* Darker blue for hover */
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 .section {
