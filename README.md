@@ -34,12 +34,14 @@ MindWave is focused on bridging educational gaps in Rwanda by providing high-qua
 Follow these steps to install and run the project locally.
 
 1. **Clone the repository**:
-   
+
+
    git clone https://github.com/ykwizera/Mindwave__final.git
   
 
-2. **Navigate to the project directory**:
+1. **Navigate to the project directory**:
    
+
    cd KeYCo-Educational-Platform
   
 
@@ -54,6 +56,7 @@ Follow these steps to install and run the project locally.
    - Add necessary environment variables such as database connection strings, JWT keys, etc.
 
 5. **Start the application**:
+
    
    npm start
   
