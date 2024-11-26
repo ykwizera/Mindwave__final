@@ -13,9 +13,15 @@
             <a href="/dashboard" style="text-decoration: none;"><h1>Mind<span>Wave</span></h1></a>
         </div>
         <div class="header-navigation-actions">
-            <a href="user-profile.html" class="button">User Profile</a>
-            <a href="user-profile.html" class="avatar">
-                <img src="assets/profile.jpg" alt="User Avatar" />
+            <!-- Show the user's first name instead of "User Profile" -->
+            <% if (user) { %>
+                <a href="/user-profile" class="button"><%= user.firstName %></a>
+            <% } else { %>
+                <a href="/login" class="button">Login</a>
+            <% } %>
+            
+            <a href="/user-profile" class="avatar">
+                <img src="/assets/profile.jpg" alt=" " />
             </a>
         </div>
     </header>
