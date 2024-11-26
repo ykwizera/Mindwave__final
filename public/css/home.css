@@ -18,20 +18,26 @@ body {
 }
 
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #32649c;
+  background-color: #f7f5f5; /* Updated Light Grey */
   padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo h1 {
   font-size: 2rem;
-  color: #fff;
+  color: #333;
 }
 
 .logo h1 span {
-  color: #ffd700;
+  color: #4a90e2; /* Updated Blue */
 }
 
 .navlinks ul {
@@ -41,7 +47,7 @@ body {
 }
 
 .navlinks a {
-  color: #fff;
+  color: #333;
   text-decoration: none;
 }
 
@@ -49,8 +55,8 @@ body {
 .nav_buttons button {
   padding: 0.5rem 1rem;
   border: none;
-  background-color: #ffd700;
-  color: #32649c;
+  background-color: #4a90e2; /* Updated Blue */
+  color: #fff;
   cursor: pointer;
   border-radius: 4px;
   transition: 0.3s;
@@ -58,12 +64,13 @@ body {
 
 .nav_buttons a button:hover,
 .nav_buttons button:hover {
-  background-color: #e5c100;
+  background-color: #357ab9; /* Slightly darker blue for hover effect */
 }
 
 .hero {
-  background-color: #32649c;
-  color: #fff;
+  margin-top: 80px; /* Adjust for fixed header */
+  background-color: #f7f5f5; /* Updated Light Grey */
+  color: #333;
   padding: 3rem 1rem;
   text-align: center;
 }
@@ -84,8 +91,8 @@ body {
 }
 
 .hero a {
-  background-color: #ffd700;
-  color: #32649c;
+  background-color: #4a90e2; /* Updated Blue */
+  color: #fff;
   padding: 0.7rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
@@ -93,7 +100,7 @@ body {
 }
 
 .hero a:hover {
-  background-color: #e5c100;
+  background-color: #357ab9; /* Darker blue for hover */
 }
 
 .section {
@@ -109,7 +116,7 @@ body {
 
 .section h2 {
   font-size: 2rem;
-  color: #32649c;
+  color: #333;
   margin-bottom: 1rem;
 }
 
@@ -119,8 +126,8 @@ body {
 }
 
 .new_footer_area {
-  background-color: #32649c;
-  color: #fff;
+  background-color: #f7f5f5; /* Updated Light Grey */
+  color: #333;
   padding: 2rem 0;
 }
 
@@ -139,13 +146,13 @@ body {
 
 .f_widget h3 {
   font-size: 1.2rem;
-  color: #ffd700;
+  color: #4a90e2; /* Updated Blue */
   margin-bottom: 0.5rem;
 }
 
 .f_widget p {
   font-size: 0.9rem;
-  color: #ddd;
+  color: #555;
 }
 
 .f_links {
@@ -167,13 +174,13 @@ body {
 }
 
 .f_links li a {
-  color: #ddd;
+  color: #333;
   text-decoration: none;
   font-size: 0.9rem;
 }
 
 .f_links li a:hover {
-  color: #ffd700;
+  color: #4a90e2; /* Updated Blue */
 }
 
 .f_social_icon {
@@ -182,28 +189,28 @@ body {
 }
 
 .f_social_icon a {
-  color: #fff;
+  color: #333;
   font-size: 1.5rem;
   transition: 0.3s;
 }
 
 .f_social_icon a:hover {
-  color: #ffd700;
+  color: #4a90e2; /* Updated Blue */
 }
 
 .footer_bottom {
-  background-color: #2c6a4f;
+  background-color: #333;
   padding: 1rem 0;
   text-align: center;
 }
 
 .footer_bottom p {
-  color: #ddd;
+  color: #fff;
   font-size: 0.9rem;
 }
 
 .footer_bottom a {
-  color: #ffd700;
+  color: #4a90e2; /* Updated Blue */
   text-decoration: none;
 }
 
@@ -221,7 +228,7 @@ body {
 .f_subscribe_two .form-control {
   padding: 0.75rem;
   width: 200px;
-  border: 1px solid #ffd700;
+  border: 1px solid #4a90e2; /* Updated Blue */
   border-radius: 25px;
   font-size: 0.9rem;
   color: #333;
@@ -231,29 +238,29 @@ body {
 
 .f_subscribe_two .form-control:focus {
   outline: none;
-  border-color: #32649c;
-  box-shadow: 0 0 5px rgba(50, 100, 156, 0.5);
+  border-color: #357ab9;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
 }
 
 .f_subscribe_two .btn_get {
   padding: 0.75rem 1.5rem;
-  background-color: #ffd700;
+  background-color: #4a90e2; /* Updated Blue */
   border: none;
   border-radius: 25px;
-  color: #32649c;
+  color: #fff;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 .f_subscribe_two .btn_get:hover {
-  background-color: #32649c;
+  background-color: #357ab9;
   color: #fff;
 }
 
 .f_subscribe_two .btn_get:focus {
   outline: none;
-  box-shadow: 0 0 5px rgba(50, 100, 156, 0.5);
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -264,6 +271,11 @@ body {
   }
 
   .f_links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navbar {
     flex-direction: column;
     gap: 1rem;
   }
