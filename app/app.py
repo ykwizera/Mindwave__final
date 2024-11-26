@@ -1,20 +1,29 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
-from app.models import db, User
+from .db import db  # Import db from the new db.py
+from .models import User  # Now you can import User model without circular imports
 from sqlalchemy.exc import IntegrityError
+def create_app():
+    app = Flask(__name__)
 
-app = Flask(__name__)
+    # App configuration
+    app.config['SECRET_KEY'] = 'your-secret-key'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# App configuration
-app.config['SECRET_KEY'] = 'your-secret-key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    # Initialize extensions
+    db.init_app(app)  # Now db is initialized within the app context
+    login_manager = LoginManager()
+    login_manager.login_view = 'login'  # Redirect to login page if unauthorized
+    login_manager.init_app(app)
 
-# Initialize extensions
-db.init_app(app)
-login_manager = LoginManager()
-login_manager.login_view = 'login' 
-login_manager.init_app(app)
+    # Register routes and models
+    with app.app_context():
+        from . import routes  # Import routes after the app is initialized
+        db.create_all()  # Ensure the database is created before running
+
+    return app
+
 
 # Default route
 @app.route('/')
@@ -111,8 +120,6 @@ def people():
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-# Run the app
 if __name__ == "__main__":
-    with app.app_context():
-        db.create_all()  # Ensure the database is created before running
-    app.run(debug=True, port=8080)
+    app = create_app()  # Initialize the app using the factory function
+    app.run(debug=True)
