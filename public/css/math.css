@@ -1,16 +1,15 @@
-/* Override for Mathematics Course */
 .card {
     background-color: white;
-    padding: 10px;  /* Reduced padding for smaller card size */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    width: 30%; /* Makes each card take up 30% of the container width */
-    margin: 10px 0; /* Adds vertical spacing between rows */
-    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+    padding: 10px;  
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    width: 30%; 
+    margin: 10px 0;
+    transition: transform 0.2s ease-in-out; 
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Adds lift effect on hover */
+    transform: translateY(-5px); 
 }
 
 .card-header h3 {
@@ -34,7 +33,6 @@
     text-decoration: underline;
 }
 
-/* Card Grid for Lessons */
 .card-grid {
     display: flex;
     flex-wrap: wrap;
@@ -42,7 +40,6 @@
     justify-content: space-between;
 }
 
-/* General Styles for the Course Page */
 .main-content {
     padding: 20px;
 }
@@ -53,7 +50,6 @@
     margin-bottom: 20px;
 }
 
-/* Footer */
 .footer {
     background-color: #2c3e50;
     color: white;

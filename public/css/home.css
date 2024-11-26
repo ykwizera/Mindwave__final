@@ -25,7 +25,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f7f5f5; /* Updated Light Grey */
+  background-color: #f7f5f5; 
   padding: 1rem 2rem;
   z-index: 1000;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -37,7 +37,7 @@ body {
 }
 
 .logo h1 span {
-  color: #4a90e2; /* Updated Blue */
+  color: #4a90e2;
 }
 
 .navlinks ul {
@@ -55,7 +55,7 @@ body {
 .nav_buttons button {
   padding: 0.5rem 1rem;
   border: none;
-  background-color: #4a90e2; /* Updated Blue */
+  background-color: #4a90e2; 
   color: #fff;
   cursor: pointer;
   border-radius: 4px;
@@ -64,12 +64,11 @@ body {
 
 .nav_buttons a button:hover,
 .nav_buttons button:hover {
-  background-color: #357ab9; /* Slightly darker blue for hover effect */
+  background-color: #357ab9;
 }
 
 .hero {
   margin-top: 80px; 
-  background-color: #f7f5f5;
   color: #333;
   display: flex;
   align-items: center;
@@ -102,7 +101,7 @@ body {
 }
 
 .hero a {
-  background-color: #4a90e2; /* Updated Blue */
+  background-color: #4a90e2;
   color: #fff;
   padding: 0.7rem 1.5rem;
   border-radius: 4px;
@@ -111,7 +110,7 @@ body {
 }
 
 .hero a:hover {
-  background-color: #357ab9; /* Darker blue for hover */
+  background-color: #357ab9; 
 }
 
 .hero-image {
@@ -149,7 +148,7 @@ body {
 }
 
 .new_footer_area {
-  background-color: #f7f5f5; /* Updated Light Grey */
+  background-color: #f7f5f5; 
   color: #333;
   padding: 2rem 0;
 }
@@ -169,7 +168,7 @@ body {
 
 .f_widget h3 {
   font-size: 1.2rem;
-  color: #4a90e2; /* Updated Blue */
+  color: #4a90e2; 
   margin-bottom: 0.5rem;
 }
 
@@ -203,7 +202,7 @@ body {
 }
 
 .f_links li a:hover {
-  color: #4a90e2; /* Updated Blue */
+  color: #4a90e2; 
 }
 
 .f_social_icon {
@@ -218,7 +217,7 @@ body {
 }
 
 .f_social_icon a:hover {
-  color: #4a90e2; /* Updated Blue */
+  color: #4a90e2; 
 }
 
 .footer_bottom {
@@ -233,7 +232,7 @@ body {
 }
 
 .footer_bottom a {
-  color: #4a90e2; /* Updated Blue */
+  color: #4a90e2;
   text-decoration: none;
 }
 
@@ -251,7 +250,7 @@ body {
 .f_subscribe_two .form-control {
   padding: 0.75rem;
   width: 200px;
-  border: 1px solid #4a90e2; /* Updated Blue */
+  border: 1px solid #4a90e2; 
   border-radius: 25px;
   font-size: 0.9rem;
   color: #333;
@@ -267,7 +266,7 @@ body {
 
 .f_subscribe_two .btn_get {
   padding: 0.75rem 1.5rem;
-  background-color: #4a90e2; /* Updated Blue */
+  background-color: #4a90e2; 
   border: none;
   border-radius: 25px;
   color: #fff;

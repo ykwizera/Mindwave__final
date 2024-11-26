@@ -13,7 +13,6 @@
             <a href="/dashboard" style="text-decoration: none;"><h1>Mind<span>Wave</span></h1></a>
         </div>
         <div class="header-navigation-actions">
-            <!-- Show the user's first name instead of "User Profile" -->
             <% if (user) { %>
                 <a href="/user-profile" class="button"><%= user.firstName %></a>
             <% } else { %>
