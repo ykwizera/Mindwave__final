@@ -47,25 +47,25 @@
                 <th>Phone</th>
                 <th>Email</th>
             </tr>
-            {% for user in users %}
+            <% users.forEach(user => { %>
             <tr>
-                <td>{{ user.first_name }}</td>
-                <td>{{ user.last_name }}</td>
-                <td>{{ user.school_name }}</td>
-                <td>{{ user.profession }}</td>
-                <td>{{ user.phone }}</td>
-                <td>{{ user.email }}</td>
+                <td><%= user.firstName %></td>
+                <td><%= user.lastName %></td>
+                <td><%= user.schoolName %></td>
+                <td><%= user.profession %></td>
+                <td><%= user.phone %></td>
+                <td><%= user.email %></td>
             </tr>
-            {% endfor %}
+            <% }) %>
         </table>
 
-        </div>
+    </div>
 
-        <!-- Footer -->
+    <!-- Footer -->
 
-        <footer class="footer">
-            <p>&copy; 2024 KeYCo Platform. All rights reserved.</p>
-        </footer>
-    
-    </body>
-    </html>
+    <footer class="footer">
+        <p>&copy; 2024 KeYCo Platform. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
