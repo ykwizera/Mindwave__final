@@ -93,9 +93,11 @@ router.post('/login', async (req, res) => {
 router.get('/logout', (req, res) => {
     req.session.destroy(err => {
         if (err) {
+            console.log('Error destroying session:', err);
             return res.status(500).send('Could not log out');
         }
-        res.redirect('/login');
+        console.log('Session destroyed');
+        res.redirect('/login'); // Redirect to login after logout
     });
 });
 
